@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.sankuai.inf.leaf.IDGen;
 import com.sankuai.inf.leaf.common.PropertyFactory;
 import com.sankuai.inf.leaf.common.Result;
+import com.sankuai.inf.leaf.common.ResultList;
 import com.sankuai.inf.leaf.common.ZeroIDGen;
 import com.sankuai.inf.leaf.segment.SegmentIDGenImpl;
 import com.sankuai.inf.leaf.segment.dao.IDAllocDao;
@@ -52,6 +53,10 @@ public class SegmentService {
     }
     public Result getId(String key) {
         return idGen.get(key);
+    }
+
+    public ResultList getIdList(String key, int length) {
+        return idGen.list(key, length);
     }
     public SegmentIDGenImpl getIdGen() {
         if (idGen instanceof SegmentIDGenImpl) {

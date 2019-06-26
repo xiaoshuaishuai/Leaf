@@ -45,8 +45,12 @@ sh deploy/run.sh
 ```shell
 #segment
 curl http://localhost:8080/api/segment/get/leaf-segment-test
+#segment 批量
+curl http://localhost:8080/api/segment/list/leaf-segment-test/1000000
 #snowflake
-curl http://localhost:8080/api/snowflake/get/test
+curl http://localhost:8080/api/snowflake/get
+#snowflake批量
+curl http://localhost:8080/api/snowflake/get/1000000
 ```
 #### 配置介绍
 

@@ -3,6 +3,7 @@ package com.sankuai.inf.leaf.server;
 import com.sankuai.inf.leaf.IDGen;
 import com.sankuai.inf.leaf.common.PropertyFactory;
 import com.sankuai.inf.leaf.common.Result;
+import com.sankuai.inf.leaf.common.ResultList;
 import com.sankuai.inf.leaf.common.ZeroIDGen;
 import com.sankuai.inf.leaf.server.exception.InitException;
 import com.sankuai.inf.leaf.snowflake.SnowflakeIDGenImpl;
@@ -33,7 +34,10 @@ public class SnowflakeService {
             logger.info("Zero ID Gen Service Init Successfully");
         }
     }
-    public Result getId(String key) {
-        return idGen.get(key);
+    public Result getId() {
+        return idGen.get();
+    }
+    public ResultList getIdList(int length) {
+        return idGen.list(length);
     }
 }
